@@ -1,0 +1,9 @@
+t=int(input())
+for j in range(0, t):
+    n = input()
+    out=True
+    for i in range(0, len(n)-1):
+        if n[i]>n[i+1]:
+            out=False
+            break
+    print("YES" if out==True else "NO")

@@ -1,0 +1,14 @@
+p="ABCDEFGHIJKLMNOPQRSTUVWXYZ_."
+k=1
+while True:
+    s=input().split()
+    k=int(s[0])
+    if k==0:
+        break
+    else:
+        out=""
+        s = s[1]
+        for i in s:            //xét lần lượt các kí tự  với i là kí tự chứ k phải index
+            x=p.find(i)     // để tìm vị trí xuất hiện ký tự i trong p
+            out=p[(x+k)%28] + out
+        print(out)

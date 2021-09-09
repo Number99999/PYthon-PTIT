@@ -1,0 +1,15 @@
+t=int(input())
+while t>0:
+    t-=1
+    s=input()
+    out=""
+    n=len(s)
+    s+=' '
+    count=1
+    for i in range(0, n):
+        if s[i]==s[i+1]:
+            count+=1
+        else:
+            out+=str(count)+s[i]
+            count=1
+    print(out)

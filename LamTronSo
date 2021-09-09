@@ -1,0 +1,21 @@
+t=int(input())
+while t>0:
+    t-=1
+    s=input()
+    n=len(s)
+    a=[]
+    sum=""
+    for i in s:
+        sum=i+sum
+    for i in range(0, n):
+        a.append(int(sum[i]))
+    for i in range(0, n-1):
+        if a[i] <5:
+            a[i]=0
+        else:
+            a[i]=0
+            a[i+1]=a[i+1]+1
+    s=""
+    for i in a:
+        s=str(i)+s
+    print(s)

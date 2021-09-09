@@ -1,0 +1,27 @@
+import math
+def gcd(a, b):
+    if a==0:
+        return b
+    else:
+        return gcd(b%a, a)
+def ngto(n):
+    if n<2:
+        return False
+    if n==2:
+        return True
+    for i in (2, int(math.sqrt(n))+1):
+        if n%i==0:
+            return False
+    return True
+t=int(input())
+while t>0:
+    t-=1
+    s=int(input())
+    k=1
+    for i in range(2, s):
+        if gcd(i, s)==1:
+            k+=1
+    if ngto(k)==True:
+        print("YES")
+    else:
+        print("NO")

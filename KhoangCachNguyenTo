@@ -1,0 +1,20 @@
+import math
+def ngto(n):
+    n=int(n)
+    for i in range(3, int(math.sqrt(n)+1)):
+        if n%i==0:
+            return False
+    return True
+n=int(input())
+x=int(input())
+a=[2, 3, 5]
+i=5
+while len(a)<n:
+    i+=2
+    if ngto(i)==True:
+        a.append(i)
+print(sum, end=" ")
+for j in range (0, n):
+    x+=a[j]
+    print(x, end=" ")
+print()

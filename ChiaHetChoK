@@ -1,0 +1,12 @@
+x=list(int(i) for i in input().split())
+a=x[0]
+k=x[1]
+n=x[2]
+sp=k-a%k
+check=False
+for i in range(a+sp, n+1, k):
+    if i%k==0:
+        check=True
+        print(i-a, end=' ')
+if check==False:
+    print(-1, end=' ')

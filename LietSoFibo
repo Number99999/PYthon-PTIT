@@ -1,0 +1,10 @@
+fibo=[0, 1, 1]
+for i in range(3, 93):
+    fibo.append(fibo[i-1]+fibo[i-2])
+t=int(input())
+while t>0:
+    t-=1
+    s=list(int(i) for i in input().split())
+    for i in range(s[0], s[1]+1):
+        print(fibo[i], end=" ")
+    print()

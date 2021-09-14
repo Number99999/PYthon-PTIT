@@ -1,0 +1,11 @@
+def sum(a):
+    s=1
+    for i in a:
+        x=int(i)
+        if x!=0:
+            s*=x
+    return s
+t=int(input())
+for T in range(0, t):
+    n=input()
+    print(sum(n))

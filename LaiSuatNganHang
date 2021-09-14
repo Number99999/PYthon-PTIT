@@ -1,0 +1,12 @@
+t=int(input())
+while(t>0):
+    t-=1
+    arr=list(float(i) for i in input().split())
+    n=arr[0]
+    x=arr[1]
+    m=arr[2]
+    dem=0
+    while(n<m):
+        n*=(1+x/100)
+        dem+=1
+    print(dem)

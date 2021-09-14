@@ -1,0 +1,12 @@
+a=[]
+while len(a)<10:
+    s=list(int(i) for i in input().split())
+    for i in s:
+        a.append(i)
+for i in range(0, 10):
+    a[i]=a[i]%42
+b=[]
+for i in a:
+    if i not in b:
+        b.append(i)
+print(len(b))

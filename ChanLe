@@ -1,0 +1,23 @@
+def check(n):
+    n=str(n)
+    sum=0
+    for i in range(0, len(n)-1):
+        x=int(n[i])
+        y=int(n[i+1])
+        if abs(x-y)!=2:
+            return False
+    for i in range(0, len(n)):
+        x=int(n[i]) 
+        sum+=x
+    if sum%10==0:
+        return True
+    else:
+        return False
+t=int(input())
+while t>0:
+    t-=1
+    n=input()
+    if check(n)==True:
+        print("YES")
+    else:
+        print("NO")

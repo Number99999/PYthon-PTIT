@@ -1,0 +1,30 @@
+import math
+def ngto(n):
+    n=int(n)
+    if n<2:
+        return False
+    if n==2:
+        return True
+    if n%2==0:
+        return False
+    for i in range(3, int(math.sqrt(n)+1), 2):
+        if n%i==0:
+            return False
+    return True
+s=list(int(i) for i in input().split())
+n=s[0]
+m=s[1]
+mt=[]
+for i in range(0, n):
+    mt.append([])
+    b=list(int(x) for x in input().split())
+    for j in b:
+        mt[i].append(j)
+for i in range(0, n):
+    for j in range(0, m):
+        if ngto(mt[i][j])==True:
+            mt[i][j]=1
+        else:
+            mt[i][j]=0
+        print(mt[i][j], end=' ')
+    print("")

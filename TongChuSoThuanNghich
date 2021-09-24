@@ -1,0 +1,23 @@
+def thuanghich(n):
+    if len(n)<2:
+        return False
+    for i in range(0, (len(n))//2+1):
+        if n[i]!=n[len(n)-1-i]:
+            return False
+    return True
+def tongchuso(n):
+    sum=0
+    n=str(n)
+    for i in n:
+        sum+=int(i)
+    return sum
+t=int(input())
+while t>0:
+    t-=1
+    n=input()
+    x=tongchuso(n)
+    x=str(x)
+    if thuanghich(x)==True:
+        print("YES")
+    else:
+        print("NO")

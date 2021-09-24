@@ -1,0 +1,29 @@
+import math
+def nguyento(n):
+    n=int(n)
+    if n<2:
+        return False
+    if n==2:
+        return True
+    if n%2==0:
+        return False
+    for i in range(2, int(math.sqrt(n)+1)):
+        if n%i==0:
+            return False
+    return True
+t=int(input())
+while t>0:
+    t-=1
+    n=input()
+    check=True
+    for i in range(0, len(n)):
+        if nguyento(i)==True and nguyento(int(n[i]))==False:
+            check= False
+            break
+        if nguyento(i)==False and nguyento(int(n[i]))==True:
+            check=False
+            break
+    if check==False:
+        print("NO")
+    else:
+        print("YES")

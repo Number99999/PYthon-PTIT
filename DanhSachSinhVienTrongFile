@@ -1,0 +1,49 @@
+SinhVien.java
+public class SinhVien{
+  private String name;
+    private String cls;
+    private String sn;
+    private Float point;
+    private int stt;
+ 
+   public SinhVien(int stt, String name, String cls , String sn, String p)//string p để tránh lỗi line not found
+   {
+     this.stt=stt;
+     this.name=name;
+     this.cls=cls;
+     this.sn=sn;
+     this.point=Float.parseFloat(p);    //chuyển string thành float
+   }
+ @Override
+   public String toString()
+   {
+      String []t=this.sn.split("/");
+      if (t[0].length()==1) t[0]="0"+t[0];
+      if (t[1].length()==1) t[1]="0"+t[1];
+      String msv="B20DCCN"+String.format("%03d", stt)+" ";  //để đủ 3 chữ số
+      String s=msv+name +" "+cls+" "+ t[0]+"/"+t[1]+"/"+t[2] +" "+ String.format("%.2f", point);
+      return s;
+   }
+ }
+Main.java
+import java.util.*;
+import java.io.*;
+public class Main {
+    public static void main(String[] args) throws FileNotFoundException {
+        File f=new File("SV.in");
+        Scanner sc=new Scanner(f);
+        int t=sc.nextInt();
+        sc.nextLine();
+        ArrayList<SinhVien> sv=new ArrayList<>();
+        for(int i=0; i<t; i++)
+        {
+            SinhVien stu=new SinhVien(i+1, sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine()); 
+            //sc.nextLine();
+            sv.add(stu);
+        } 
+        for(int i=0; i<t; i++) System.out.println(sv.get(i).toString()); 
+        //SinhVien s=new SinhVien(sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextFloat());
+        //System.out.println(s.toString());
+        sc.close();
+    }
+}
